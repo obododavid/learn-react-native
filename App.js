@@ -8,6 +8,9 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState('')
 
   const handleAddGoal = enteredText => {
+    if (enteredText.length === 0) {
+      return;
+    }
     setAllGoals((allGoals) => [...allGoals, { id: Math.random().toString(), value: enteredText }])
     setIsAddMode(false)
   }
